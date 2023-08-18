@@ -10,18 +10,18 @@ let songIndex = 0;
 let SongItom = Array.from(document.getElementsByClassName('SongItom'));
 
 let songs = [
-    { songName: 'tere hawaale', filePath: '/songs/1.mp3', coverPath: 'covers/cover1.jpg', songDetails: 'Laal Singh Chaddha' },
-    { songName: 'Kesariya', filePath: '/songs/2.mp3', coverPath: 'covers/cover3.jpg', songDetails: 'Brahmastra' },
-    { songName: 'Kahani', filePath: '/songs/3.mp3', coverPath: 'covers/cover2.jpg', songDetails: 'Laal Singh Chaddha' },
-    { songName: 'Maan Meri Jaan', filePath: '/songs/4.mp3', coverPath: 'covers/cover4.jpg', songDetails: 'Performing Artist: King' },
-    { songName: 'Malang Sajna', filePath: '/songs/5.mp3', coverPath: 'covers/cover5.jpg', songDetails: 'Malang Sajna' },
-    { songName: 'Ram Siya Ram', filePath: '/songs/6.mp3', coverPath: 'covers/cover6.jpg', songDetails: 'Adipurush' },
-    { songName: 'Tere Pyar Mein', filePath: '/songs/7.mp3', coverPath: 'covers/cover7.jpg', songDetails: 'Tu Jhooti Main Makkar' },
-    { songName: 'Phir Aur Kya Chahiye', filePath: '/songs/8.mp3.jpg', coverPath: 'covers/cover8.jpg', songDetails: 'Zara Hatke Zara Bachke' },
-    { songName: 'Ramuloo Ramula', filePath: '/songs/9.mp3.jpg', coverPath: 'covers/cover9.jpg', songDetails: 'Ala Vaikuntapuramlo' },
-    { songName: 'Buttabomma', filePath: '/songs/10.mp3.jpg', coverPath: 'covers/cover10.jpg', songDetails: 'Ala Vaikuntapuramlo' },
-    { songName: 'Inthandham', filePath: '/songs/11.mp3.jpg', coverPath: 'covers/cover11.jpg', songDetails: 'Seeta Ramana' },
-    { songName: 'Oo Antava Oo', filePath: '/songs/12.mp3.jpg', coverPath: 'covers/cover12.jpg', songDetails: 'Pushpa' },
+    { songName: 'tere hawaale', filePath: 'songs/1.mp3', coverPath: 'covers/cover1.jpg', songDetails: 'Laal Singh Chaddha' },
+    { songName: 'Kesariya', filePath: 'songs/2.mp3', coverPath: 'covers/cover3.jpg', songDetails: 'Brahmastra' },
+    { songName: 'Kahani', filePath: 'songs/3.mp3', coverPath: 'covers/cover2.jpg', songDetails: 'Laal Singh Chaddha' },
+    { songName: 'Maan Meri Jaan', filePath: 'songs/4.mp3', coverPath: 'covers/cover4.jpg', songDetails: 'Performing Artist: King' },
+    { songName: 'Malang Sajna', filePath: 'songs/5.mp3', coverPath: 'covers/cover5.jpg', songDetails: 'Malang Sajna' },
+    { songName: 'Ram Siya Ram', filePath: 'songs/6.mp3', coverPath: 'covers/cover6.jpg', songDetails: 'Adipurush' },
+    { songName: 'Tere Pyar Mein', filePath: 'songs/7.mp3', coverPath: 'covers/cover7.jpg', songDetails: 'Tu Jhooti Main Makkar' },
+    { songName: 'Phir Aur Kya Chahiye', filePath: 'songs/8.mp3.jpg', coverPath: 'covers/cover8.jpg', songDetails: 'Zara Hatke Zara Bachke' },
+    { songName: 'Ramuloo Ramula', filePath: 'songs/9.mp3.jpg', coverPath: 'covers/cover9.jpg', songDetails: 'Ala Vaikuntapuramlo' },
+    { songName: 'Buttabomma', filePath: 'songs/10.mp3.jpg', coverPath: 'covers/cover10.jpg', songDetails: 'Ala Vaikuntapuramlo' },
+    { songName: 'Inthandham', filePath: 'songs/11.mp3.jpg', coverPath: 'covers/cover11.jpg', songDetails: 'Seeta Ramana' },
+    { songName: 'Oo Antava Oo', filePath: 'songs/12.mp3.jpg', coverPath: 'covers/cover12.jpg', songDetails: 'Pushpa' },
 
 ]
 
@@ -97,6 +97,8 @@ Array.from(document.getElementsByClassName('songItomPlay')).forEach((element) =>
         audioElement.play()
         masterplay.classList.remove('fa-play-circle');
         masterplay.classList.add('fa-pause-circle');
+        
+       
     })
 })
 
