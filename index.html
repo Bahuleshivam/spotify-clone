@@ -221,7 +221,7 @@
                 <span id="masterSongDetails" style="margin: 5px 0;" style="margin: 3px 0; font-size: 14px;">Ala
                     Vaikuntapuramlo</span>
             </div>
-            <span><i class="fa-solid like fa-heart left-i"></i></span>
+            <span><i class="fa-solid like fa-heart left-i" id="Like"></i></span>
         </div>
         <div id="in-song-range">
             <ul>
@@ -229,13 +229,18 @@
                 <li><i class="fa-solid fa-play-circle" style="color: #ffffff;" id="masterplay"></i></li>
                 <li><i class="fa-solid fa-forward-fast" style="color: #ffffff;" id="next"></i></li>
             </ul>
+            <div class="boxes-range">
+            <span class="song-current-time" id="StartTime">00 : 00</span>
             <input type="range" id="ProgressBar" class="song-range" min="0" max="100" value="0">
+            <span class="song-duration" id="EndTime">00 : 00</span>
+        </div>
         </div>
         <div class="in-song-volume">
             <i class="fa-solid fa-volume-high" style="color: #ffffff;margin: 0 10px;"></i>
             <input type="range" id="volume-bar" class="song-volume" min="0" max="100">
         </div>
     </footer>
+    
 
 
     <script src="script.js"></script>

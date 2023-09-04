@@ -8,6 +8,8 @@ const masterSongImg = document.getElementById('masterSongImg')
 let audioElement = new Audio('/songs/10.mp3')
 let songIndex = 0;
 let SongItom = Array.from(document.getElementsByClassName('SongItom'));
+const EndTime = document.getElementById("EndTime")
+const StartTime = document.getElementById("StartTime")
 
 let songs = [
     { songName: 'tere hawaale', filePath: 'songs/1.mp3', coverPath: 'covers/cover1.jpg', songDetails: 'Laal Singh Chaddha' },
@@ -25,12 +27,15 @@ let songs = [
 
 ]
 
+// showing the images , songaname, songDetails 
+
 SongItom.forEach((element, i) => {
     // console.log(element, i);
     element.getElementsByTagName('img')[0].src = songs[i].coverPath;
     element.getElementsByClassName('songName')[0].innerText = songs[i].songName
     element.getElementsByClassName('songDetails')[0].innerText = songs[i].songDetails
 });
+
 
 // click and play song 
 
@@ -40,6 +45,7 @@ masterplay.addEventListener('click', () => {
         audioElement.play();
         masterplay.classList.remove('fa-play-circle');
         masterplay.classList.add('fa-pause-circle');
+
     }
     else {
         audioElement.pause();
@@ -49,17 +55,55 @@ masterplay.addEventListener('click', () => {
     }
 })
 
+
 //this is for time and duration on progressBar
 
-
 audioElement.addEventListener('timeupdate', () => {
-    progress = parseInt((audioElement.currentTime / audioElement.duration) * 100);
-    ProgressBar.value = progress;
+
+    setTimeout(() => {
+        
+        ProgressBar.max = audioElement.duration
+        EndTime.innerHTML = formatTime(audioElement.duration)
+        console.log(audioElement.duration)
+            
+
+    },300);
+   
 })
+
+// Formating the Time in Minute and Seconds
+
+const formatTime = (time) => {
+    let min = Math.floor(time / 60);
+    if(min < 10 ){
+        min = `0${min}`;
+
+    }
+    let sec = Math.floor(time % 60 );
+    if(sec < 10){
+        sec = ` 0${sec}`;
+    }
+    return `${min} : ${sec}`
+}
+
+// updating time 
+
+setInterval(() => {
+    StartTime.innerHTML = formatTime(audioElement.currentTime)
+    ProgressBar.value = audioElement.currentTime
+    if(Math.floor(audioElement.currentTime) == Math.floor(ProgressBar.max)){
+        next.click();
+    }
+}, 500);
+
+
 ProgressBar.addEventListener('change', () => {
-    audioElement.currentTime = ProgressBar.value * audioElement.duration / 100;
+    audioElement.currentTime = ProgressBar.value 
+   
 
 })
+
+
 
 // Adjust Volume
 
@@ -140,6 +184,20 @@ prev.addEventListener('click', () => {
 
 })
 
+const Like = document.getElementById("Like")
+Like.style.color = "red"
+
+Like.addEventListener("click", () =>{
+    console.log("clicked")
+    
+    if(Like.style.color == "red"){
+        Like.style.color = "white"
+    } 
+    else{
+        Like.style.color = "red"
+    }
+    
+})
 
 
 

@@ -162,7 +162,7 @@ footer{
     display: flex;
     justify-content: center;
     width: 110px;
-    height: 57px;
+    height: 50px;
 }
 #in-song-range ul li{
     list-style: none;
@@ -191,6 +191,7 @@ footer{
 .song-range {
     width: 60%;
     height: 4px;
+    margin: 0 10px;
 }
 
 .in-song-volume {
@@ -266,6 +267,19 @@ footer{
     opacity: 1;
 }
 
+.song-current-time{
+    color: white;
+}
 
+#EndTime{
+    color: white;
+}
+
+.boxes-range {
+    display: flex;
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+}
 
 
